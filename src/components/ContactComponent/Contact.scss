@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+@import "../../styles/global.scss";
+
+.header-contact {
+  background-color: $dark-grey;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  &-item {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+    &-icon {
+      width: 25px;
+      margin-right: 15px;
+    }
+    &-text,
+    .user {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 200;
+    }
+  }
+  .header-user {
+    margin-left: auto;
+  }
+}

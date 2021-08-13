@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+@import "../../styles/global.scss";
+
+.best-tours {
+  .best-tours-container {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .best-tours-item {
+      width: calc(33.33% - 35px);
+      margin-bottom: 40px;
+      position: relative;
+      &:before {
+        position: absolute;
+        top: 10px;
+        font-size: 1.2rem;
+        line-height: 20px;
+        text-align: center;
+        content: "HOT";
+        width: 60px;
+        height: 20px;
+        color: #fff;
+        background-color: red;
+        border: 0;
+        z-index: 2;
+      }
+      .tour-desc {
+        width: 100%;
+        .tour-title {
+          display: none;
+        }
+      }
+      .tour-place-price {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .tour-date {
+        display: none;
+      }
+    }
+  }
+}

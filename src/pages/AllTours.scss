@@ -1,0 +1,43 @@
+@import "../styles/variables.scss";
+
+.all-tours {
+  .all-tours-filter {
+    display: flex;
+    margin-top: 70px;
+    padding: 0 15px;
+  }
+  .tour {
+    display: flex;
+
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px 0 #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    &-img {
+      min-width: 400px;
+      max-width: 400px;
+    }
+    &-title {
+      h1 {
+        font-size: 1.8rem;
+        word-break: break-all;
+        color: $dark-grey;
+      }
+    }
+    &-desc {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 10px;
+    }
+    &-place-price {
+      display: flex;
+      width: 100%;
+      .tour-price {
+        margin-left: auto;
+      }
+    }
+  }
+}

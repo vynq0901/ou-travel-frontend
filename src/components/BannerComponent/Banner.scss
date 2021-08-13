@@ -1,0 +1,19 @@
+.banner {
+  width: 100%;
+  height: 600px;
+  background-image: url("../../assets/images/phu-quoc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  .banner-heading {
+    font-size: 2.5rem;
+  }
+  .banner-subheading {
+    font-size: 1.8rem;
+    margin: 10px 0;
+  }
+}

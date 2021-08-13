@@ -1,0 +1,47 @@
+@import "../../styles/variables.scss";
+@import "../../styles/global.scss";
+
+.find-form {
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 25px;
+}
+.find-where {
+  width: calc(100% - 20px);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 25px;
+  &-icon {
+    width: 25px;
+  }
+  &-input {
+    width: 80%;
+    margin-left: 8px;
+    font-size: 1.8rem;
+    border: none;
+  }
+}
+.find-submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  .find-date {
+    width: 45%;
+  }
+  .datepicker-input {
+    font-size: 1.5rem;
+    padding: 13px 10px;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+  }
+  .button-find {
+    width: 45%;
+    font-size: 1.5rem;
+    border: none;
+  }
+}

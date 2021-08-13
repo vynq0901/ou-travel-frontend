@@ -1,0 +1,56 @@
+@import "../../styles/variables.scss";
+@import "../../styles/global.scss";
+.tour {
+  position: relative;
+  .tour-img {
+    height: 250px;
+    width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+    }
+    .tour-img-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: none;
+      transition: 0.5s;
+    }
+    &:hover .tour-img-overlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &:hover img {
+      transform: scale(1.2);
+    }
+  }
+  .tour-desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    .tour-place {
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      img {
+        width: 20px;
+        margin-right: 5px;
+      }
+    }
+    .tour-price {
+      font-size: 1.8rem;
+      color: $primary-color;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+@import "../../styles/global.scss";
+
+.footer {
+  margin-top: 80px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $dark-grey;
+  .copyright {
+    p {
+      font-size: 1.5rem;
+      color: $light-grey;
+    }
+  }
+  .social-item {
+    display: inline-block;
+    width: 20px;
+    background-color: rgb(128, 122, 122);
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+    &-img {
+      width: 100%;
+    }
+  }
+}
