@@ -1,11 +1,10 @@
 import React from "react";
 import "./Tour.scss";
 export default function Tour(props) {
-  console.log(props.tour);
   return (
     <div className="tour best-tours-item">
       <div className="tour-img">
-        <img alt="img" src={props.tour.image} />
+        <img alt="img" src="./assets/images/phu-quoc.jpg" />
         <div className="tour-img-overlay">
           <a href="#" className="button">
             Xem chi tiết
@@ -15,7 +14,7 @@ export default function Tour(props) {
 
       <a href="#" className="tour-desc">
         <div className="tour-title">
-          <h1>{props.tour.name}</h1>
+          <h1></h1>
         </div>
         <div className="tour-date">
           <p>Khởi hành: 10/08/2021</p>
@@ -25,12 +24,7 @@ export default function Tour(props) {
             <img src="./assets/images/des-icon.svg" />
             Phu Quoc
           </h1>
-          <p className="tour-price">
-            {props.tour.price.toLocaleString("vi-VN", {
-              style: "currency",
-              currency: "VND",
-            })}
-          </p>
+          <p className="tour-price">3500000</p>
         </div>
       </a>
     </div>

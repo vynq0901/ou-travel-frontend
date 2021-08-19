@@ -31,7 +31,7 @@ export default function Navbar() {
           </Link>
         </li>
       </ul>
-      <div className="button">ĐẶT CHỖ NGAY</div>
+      <div className="button book-now-button">ĐẶT CHỖ NGAY</div>
     </div>
   );
 }

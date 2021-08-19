@@ -39,12 +39,8 @@ export default function Contact() {
           alt="user-icon"
         />
         <span className="header-contact-item-text">
-          <a className="user user-login" href="#">
-            Đăng nhập
-          </a>
-          /
-          <a className="user user-register" href="#">
-            Đăng kí
+          <a href="#" className="user">
+            Tài khoản
           </a>
         </span>
       </div>

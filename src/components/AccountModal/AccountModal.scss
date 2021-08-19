@@ -1,0 +1,81 @@
+@import "../../styles/variables.scss";
+@import "../../styles/global.scss";
+
+.account-modal {
+  background-image: url("../../assets/images/login-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 20px 0;
+  .button {
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    outline: none;
+    margin-top: 12px;
+    width: 150px;
+  }
+}
+.input-form {
+  background-color: rgb(247, 247, 247);
+  border-radius: 15px;
+  padding: 30px 50px;
+  width: 320px;
+  height: 380px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.button-box {
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 0 10px 1px $primary-color;
+  border-radius: 30px;
+}
+.toggle-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  font-size: 1.4rem;
+  width: 50%;
+}
+.input-group {
+  margin-top: 10px;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.user-input {
+  width: 100%;
+}
+.input-field {
+  width: 100%;
+  font-size: 1.3rem;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #ddd;
+  background-color: transparent;
+  margin: 5px 0;
+  padding: 5px 0;
+}
+#toggle {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(to right, $primary-color, $light-green);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+#login {
+  top: 150px;
+  left: 120px;
+}
+#register {
+  left: 450px;
+}

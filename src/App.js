@@ -8,6 +8,7 @@ import Footer from "./components/FooterComponent/Footer";
 import Home from "./pages/Home";
 import TourDetail from "./pages/TourDetail";
 import About from "./pages/About";
+import AccountModal from "./components/AccountModal/AccountModal";
 
 const AllTours = React.lazy(() => import("./pages/AllTours"));
 const NewsPage = React.lazy(() => import("./pages/NewsPage"));
@@ -39,7 +40,7 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/">
-              <Home />
+              <AccountModal />
             </Route>
             <Route exact path="/tours">
               <AllTours />
@@ -54,7 +55,7 @@ function App() {
               <TourDetail />
             </Route>
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     </Suspense>

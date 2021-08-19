@@ -4,12 +4,6 @@ import Filter from "../components/FilterComponent/Filter";
 import ToursContainer from "../components/TourContainerComponent/ToursContainer";
 import "./AllTours.scss";
 export default function AllTours() {
-  const [tours, setTours] = useState([]);
-  useEffect(async () => {
-    const result = await axios.get("http://127.0.0.1:8000/api/travel/");
-    setTours(result.data);
-  }, []);
-
   return (
     <div className="all-tours">
       <h1
@@ -29,7 +23,7 @@ export default function AllTours() {
 
       <div className="all-tours-filter">
         <Filter />
-        <ToursContainer tours={tours} />
+        <ToursContainer />
       </div>
     </div>
   );
