@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Contact.scss";
 
 export default function Contact() {
@@ -39,9 +40,9 @@ export default function Contact() {
           alt="user-icon"
         />
         <span className="header-contact-item-text">
-          <a href="#" className="user">
+          <Link to="/account" className="user">
             Tài khoản
-          </a>
+          </Link>
         </span>
       </div>
     </div>

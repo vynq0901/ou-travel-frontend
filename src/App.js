@@ -40,7 +40,7 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/">
-              <AccountModal />
+              <Home />
             </Route>
             <Route exact path="/tours">
               <AllTours />
@@ -53,6 +53,9 @@ function App() {
             </Route>
             <Route path="/tours/:id">
               <TourDetail />
+            </Route>
+            <Route path="/account">
+              <AccountModal />
             </Route>
           </Switch>
           {/* <Footer /> */}
