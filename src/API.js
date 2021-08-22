@@ -1,7 +1,8 @@
 import axios from "axios";
 
 export let endpoints = {
-  users: "/users/",
+  users: "api/users/",
+  auth: "auth/"
 };
 
 export default axios.create({

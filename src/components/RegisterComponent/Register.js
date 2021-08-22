@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import API, { endpoints } from "../../API";
+import InfoInput from "../InfoInput/InfoInput";
+
 
 export default function Register() {
   const avatarRef = useRef(null);
@@ -99,18 +101,4 @@ export default function Register() {
   );
 }
 
-function InfoInput({ controlId, type, placeholder, value, name, onChange }) {
-  return (
-    <div className="user-input">
-      <input
-        className="input-field"
-        id={controlId}
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        name={name}
-        onChange={onChange}
-      />
-    </div>
-  );
-}
+

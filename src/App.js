@@ -1,6 +1,6 @@
 import React, { useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-
+import { CookiesProvider } from "react-cookie";
 import "./reset.css";
 import "./App.css";
 import Header from "./components/HeaderComponent/Header";
@@ -34,6 +34,7 @@ function App() {
   }, []);
 
   return (
+    <CookiesProvider>
     <Suspense fallback={<div>Loading...</div>}>
       <Router>
         <div className="App">
@@ -58,10 +59,11 @@ function App() {
               <AccountModal />
             </Route>
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
     </Suspense>
+    </CookiesProvider>
   );
 }
 

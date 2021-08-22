@@ -5,7 +5,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 export default function BestTours() {
   useEffect(() => {
-    console.log(1);
     AOS.init();
     return () => {
       return;
