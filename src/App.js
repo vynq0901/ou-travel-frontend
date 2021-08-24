@@ -1,6 +1,8 @@
 import React, { useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import { CookiesProvider } from "react-cookie";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import "./reset.css";
 import "./App.css";
 import Header from "./components/HeaderComponent/Header";
@@ -34,36 +36,38 @@ function App() {
   }, []);
 
   return (
-    <CookiesProvider>
-    <Suspense fallback={<div>Loading...</div>}>
-      <Router>
-        <div className="App">
-          <Header />
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/tours">
-              <AllTours />
-            </Route>
-            <Route path="/news">
-              <NewsPage />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/tours/:id">
-              <TourDetail />
-            </Route>
-            <Route path="/account">
-              <AccountModal />
-            </Route>
-          </Switch>
-          <Footer />
-        </div>
-      </Router>
-    </Suspense>
-    </CookiesProvider>
+    <Provider store={store}>
+      <CookiesProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Router>
+            <div className="App">
+              <Header />
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route exact path="/tours">
+                  <AllTours />
+                </Route>
+                <Route path="/news">
+                  <NewsPage />
+                </Route>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/tours/:id">
+                  <TourDetail />
+                </Route>
+                <Route path="/account">
+                  <AccountModal />
+                </Route>
+              </Switch>
+              <Footer />
+            </div>
+          </Router>
+        </Suspense>
+      </CookiesProvider>
+    </Provider>
   );
 }
 

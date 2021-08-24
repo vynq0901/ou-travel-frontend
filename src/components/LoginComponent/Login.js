@@ -2,13 +2,17 @@ import React, {useState, useEffect} from "react";
 import InfoInput from "../InfoInput/InfoInput";
 import axios from "axios";
 import API, { endpoints } from "../../API";
+import {login} from "../../redux/userSlice";
 import { useCookies } from "react-cookie";
 import { useHistory } from "react-router";
+import { useDispatch } from "react-redux";
+
 
 export default function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [token, setToken] = useCookies(["usertoken"]);
+  const dispatch = useDispatch();
   let history = useHistory();
 
   useEffect(() => {
@@ -19,6 +23,7 @@ export default function Login() {
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
+    
     API.post(
       endpoints["auth"],
       {username: username, password: password}, 
@@ -26,7 +31,10 @@ export default function Login() {
       )
       .then(res => {
         setToken('usertoken', res.data.token)
-        
+        dispatch(login({
+          username: username,
+          loggedIn: true,
+        }));
     })
   }
   return (

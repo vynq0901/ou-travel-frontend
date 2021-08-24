@@ -39,7 +39,7 @@ export default function Register() {
       .then((res) => {
         console.info(res);
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => console.log(err));
   };
 
   return (

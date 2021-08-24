@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { currentUser } from "../../redux/userSlice";
+import Logout from "../Logout/Logout";
 import "./Contact.scss";
 
 export default function Contact() {
+  const user = useSelector(currentUser);
+  
   return (
     <div className="header-contact">
       <div className="header-contact-item">
@@ -12,7 +17,7 @@ export default function Contact() {
           alt="phone-icon"
         />
         <span className="header-contact-item-text">
-          0905-123-456 / 0905-678-345
+         0935123456 / 0905789312
         </span>
       </div>
       <div className="header-contact-item">
@@ -40,9 +45,10 @@ export default function Contact() {
           alt="user-icon"
         />
         <span className="header-contact-item-text">
+          {user ? <Link className="user">{user.username} <Logout /></Link> :  
           <Link to="/account" className="user">
             Tài khoản
-          </Link>
+          </Link>}
         </span>
       </div>
     </div>
