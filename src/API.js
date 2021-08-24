@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export let endpoints = {
-  users: "api/users/",
+  users: "api/user/",
   auth: "auth/"
 };
 

@@ -15,7 +15,8 @@ export default function Register() {
     confirm_password: "",
   });
   const [registerSuccess, setRegisterSuccess] = useState(false);
-
+  const [existUser,setExistUser] = useState(false);
+  const [existEmail,setExistEmail] = useState(false);
 
   const handleChange = (event) => {
     setUser({
@@ -51,6 +52,10 @@ export default function Register() {
           confirm_password: "",
         });
       })
+      .catch((err) => {
+        if(err.response.data.username) setExistUser(true);
+        if(err.response.data.email) setExistEmail(true);
+      })
     
   };
 
@@ -82,6 +87,7 @@ export default function Register() {
         value={user.email}
         onChange={handleChange}
       />
+      {existEmail && <p>Email đã tồn tại</p>}
       <InfoInput
         label="Tên người dùng"
         type="text"
@@ -90,6 +96,7 @@ export default function Register() {
         value={user.username}
         onChange={handleChange}
       />
+      {existUser && <p>Tên người dùng đã tồn tại</p>}
       <InfoInput
         label="Mật khẩu"
         type="password"
