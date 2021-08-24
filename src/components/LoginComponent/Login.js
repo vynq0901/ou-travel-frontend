@@ -11,12 +11,12 @@ import { useDispatch } from "react-redux";
 export default function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useCookies(["usertoken"]);
+  const [token, setToken] = useCookies(["user"]);
   const dispatch = useDispatch();
   let history = useHistory();
 
   useEffect(() => {
-    if (token['usertoken']) {
+    if (token['user']) {
       history.push('/')
     }
   }, [token])
@@ -30,11 +30,10 @@ export default function Login() {
       {headers: {"Content-Type": "application/json"}}
       )
       .then(res => {
-        setToken('usertoken', res.data.token)
-        dispatch(login({
-          username: username,
-          loggedIn: true,
-        }));
+        setToken('user', res.data)
+        dispatch(login(
+          res.data
+        ));
     })
   }
   return (
@@ -53,7 +52,7 @@ export default function Login() {
         placeholder="Mật khẩu"
         onChange={e => setPassword(e.target.value)}
       />
-      <button className="button" onClick={handleLoginSubmit}>Đăng nhập</button>
+      <button className="button" onSubmit={handleLoginSubmit}>Đăng nhập</button>
     </form>
   );
 }

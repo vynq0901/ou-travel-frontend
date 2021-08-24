@@ -4,12 +4,12 @@ import { useCookies} from "react-cookie";
 import { useDispatch } from 'react-redux'
 export default function Logout() {
     const dispatch = useDispatch();
-    const [cookie, , removeCookie] = useCookies(["usertoken"]);
+    const [cookie, , removeCookie] = useCookies(["user"]);
 
     const handleLogoutSubmit = (event) => {
         event.preventDefault();
         dispatch(logout());
-        removeCookie("usertoken");
+        removeCookie("user");
     }
 
     return (

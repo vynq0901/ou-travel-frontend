@@ -11,6 +11,7 @@ export default function InfoInput({ controlId, type, placeholder, value, name, o
             value={value}
             name={name}
             onChange={onChange}
+            required
           />
         </div>
       );

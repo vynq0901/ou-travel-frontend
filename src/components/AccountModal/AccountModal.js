@@ -16,12 +16,12 @@ export default function AccountModal() {
     toggleLogin.addEventListener("click", login);
     function register() {
       loginForm.style.left = "-500px";
-      registerForm.style.left = "60px";
+      registerForm.style.left = "25px";
       toggle.style.left = "150px";
     }
     function login() {
-      loginForm.style.left = "120px";
-      registerForm.style.left = "450px";
+      loginForm.style.left = "20px";
+      registerForm.style.left = "430px";
       toggle.style.left = "0";
     }
     return () => {

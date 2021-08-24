@@ -14,6 +14,9 @@ export default function Register() {
     password: "",
     confirm_password: "",
   });
+  const [registerSuccess, setRegisterSuccess] = useState(false);
+
+
   const handleChange = (event) => {
     setUser({
       ...user,
@@ -37,13 +40,24 @@ export default function Register() {
       },
     })
       .then((res) => {
-        console.info(res);
+        console.log(res.data);
+        setRegisterSuccess(true);
+        setUser({
+          last_name: "",
+          first_name: "",
+          email: "",
+          username: "",
+          password: "",
+          confirm_password: "",
+        });
       })
-      .catch((err) => console.log(err));
+    
   };
 
   return (
+    
     <form className="input-group" id="register" onSubmit={handleRegisterSubmit}>
+      {registerSuccess && <p>Dang ki thanh cong</p>}
       <InfoInput
         label="Họ"
         type="text"

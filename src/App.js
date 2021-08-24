@@ -1,10 +1,14 @@
 import React, { useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import { CookiesProvider } from "react-cookie";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+
 import "./reset.css";
 import "./App.css";
+
+import { useCookies} from "react-cookie";
+import { login } from "./redux/userSlice";
+import { useDispatch } from "react-redux";
+
 import Header from "./components/HeaderComponent/Header";
 import Footer from "./components/FooterComponent/Footer";
 import Home from "./pages/Home";
@@ -16,6 +20,8 @@ const AllTours = React.lazy(() => import("./pages/AllTours"));
 const NewsPage = React.lazy(() => import("./pages/NewsPage"));
 
 function App() {
+  const [userLoggedIn] = useCookies(["user"]);
+  const dispatch = useDispatch();
   useEffect(() => {
     const navbar = document.querySelector(".header-navbar");
     window.onscroll = () => {
@@ -35,8 +41,13 @@ function App() {
     };
   }, []);
 
-  return (
-    <Provider store={store}>
+  useEffect(() => {
+    if (userLoggedIn.user) {
+      dispatch(login(userLoggedIn.user));
+    } 
+  }, [userLoggedIn])
+
+  return ( 
       <CookiesProvider>
         <Suspense fallback={<div>Loading...</div>}>
           <Router>
@@ -67,7 +78,6 @@ function App() {
           </Router>
         </Suspense>
       </CookiesProvider>
-    </Provider>
   );
 }
 

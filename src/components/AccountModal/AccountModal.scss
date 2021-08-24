@@ -3,9 +3,11 @@
 
 .account-modal {
   background-image: url("../../assets/images/login-bg.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
   background-position: center;
   background-size: cover;
   padding: 20px 0;
+
   .button {
     display: block;
     margin: 0 auto;
@@ -18,7 +20,7 @@
 .input-form {
   background-color: rgb(247, 247, 247);
   border-radius: 15px;
-  padding: 30px 50px;
+  padding: 20px;
   width: 320px;
   height: 380px;
   margin: 0 auto;
@@ -73,9 +75,13 @@
 }
 
 #login {
+  width: 90%;
   top: 150px;
-  left: 120px;
+  left: 20px;
+  .user-input {
+    margin-bottom: 20px;
+  }
 }
 #register {
-  left: 450px;
+  left: 420px;
 }
