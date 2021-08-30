@@ -1,19 +1,20 @@
 import React from "react";
 import { FaUser } from "react-icons/fa";
+import avatar from "../../assets/images/avatartest.jpg"
+import './Comment.scss'
 export default function Comment() {
   return (
     <div className="comment">
-      <div className="username">
-        <FaUser />
-        Nguyễn Quốc Vỹ
+      <div className="user">
+        <img className="user-avatar" src={avatar} />
+        <p className="username">Vỹ Đẹp Chai</p>
       </div>
-      <div>
+      <div className="comment-section">
         <div className="rating">
           <div className="rating-score">10.0</div>
           <p className="rating-desc">Tuyệt vời</p>
-          <p className="rating-date">29/07/2021</p>
         </div>
-        <p className="comment-content">Mình hài lòng về tour, good!</p>
+        <p className="comment-content">Rất hài lòng về tour, good!</p>
       </div>
     </div>
   );

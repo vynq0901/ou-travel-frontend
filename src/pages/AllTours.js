@@ -1,9 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import API, { endpoints } from "../API";
 import Filter from "../components/FilterComponent/Filter";
 import ToursContainer from "../components/TourContainerComponent/ToursContainer";
 import "./AllTours.scss";
+
+
 export default function AllTours() {
+  const [tours, setTours] = useState([])
+  //call api tours
+  useEffect(() => {
+    const getTours = async () => {
+      await API.get(endpoints["tours"])
+        .then(res => setTours(res.data.results))
+        .catch(err => console.log(err))
+    }
+
+    getTours()
+  }, [])
+
   return (
     <div className="all-tours">
       <h1
@@ -23,7 +38,7 @@ export default function AllTours() {
 
       <div className="all-tours-filter">
         <Filter />
-        <ToursContainer />
+        <ToursContainer tours={tours} />
       </div>
     </div>
   );

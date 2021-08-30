@@ -51,6 +51,7 @@ export default function Register() {
           password: "",
           confirm_password: "",
         });
+        setExistUser(false);
       })
       .catch((err) => {
         if(err.response.data.username) setExistUser(true);

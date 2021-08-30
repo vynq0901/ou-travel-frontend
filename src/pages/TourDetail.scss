@@ -1,0 +1,44 @@
+@import "../styles/variables.scss";
+.tour-details-page {
+    padding: 0 50px;
+    background-color: rgb(247, 244, 244);
+}
+
+.tour-details {
+    margin-top: 50px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    .tour-detail {
+        width: 70%;
+        .tour-title {
+            font-size: 2.5rem;
+            color: $primary-color;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .tour-detail-img {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+        .tour-place-duration {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0 20px 0;
+            .tour-place, .tour-duration, .tour-traffic {
+                font-size: 1.3rem;
+            }
+            .tour-place, .tour-duration {
+                display: flex;
+                align-items: center;
+            }
+        }
+        .tour-content {
+            font-size: 1.4rem;
+            line-height: 1.8;
+        }
+    }
+    
+}

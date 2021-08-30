@@ -11,7 +11,9 @@
       width: calc(33.33% - 35px);
       margin-bottom: 40px;
       position: relative;
-
+      .tour-img  {
+        width: 100%;
+      }
       &:before {
         position: absolute;
         top: 10px;
